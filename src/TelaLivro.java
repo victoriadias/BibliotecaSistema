@@ -88,6 +88,10 @@ private void carregarTabelaLivrosFiltrado(String titulo, String genero, Integer 
                 rs.getInt("quantidade")
             });
         }
+        if (m.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(this, "Nenhum livro encontrado.");
+        }
+
         rs.getStatement().getConnection().close();
     } catch (Exception e) {
         e.printStackTrace();
